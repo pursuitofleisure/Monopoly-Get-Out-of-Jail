@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="author" content="Diana Le">
+   <meta name="description"
+      content="Press the button to roll the dice and test your luck and escape jail! Monopoly Jail square styled with Grid and Flexbox. Vanilla JS used for the dice roll functionality">
+   <title>Monopoly - 3 Tries to Get Out of Jail by Diana Le</title>
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@600&display=swap">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+   <link rel="stylesheet" href="monopoly.css">
+</head>
+
+<body>
+
+   <div id="instructions">
+      <h1>Get out of Jail</h1>
+      <p>You have 3 tries to roll matching dice and escape jail!</p>
+   </div>
+   <div id="jail">
+      <div class="just">Just
+      </div>
+      <div class="visiting">Visiting
+      </div>
+      <div id="play">
+         <button id="roll-die">Roll Dice</button>
+         <button id="reset">Play Again</button>
+         <div id="dice">
+            <div id="dice01">*</div>
+            <div id="dice02">*</div>
+         </div>
+      </div>
+      <!-- end play -->
+      <div id="cell-wrapper">
+         <div class="cell">
+            <span>In</span>
+            <div class="bars">
+               <div></div>
+               <div></div>
+               <div></div>
+               <div></div>
+            </div>
+            <span>Jail</span>
+         </div>
+      </div>
+   </div>
+
+   <div id="tries">Tries Remaining: <span id="remaining">3</span></div>
+   <script src="monopoly.js"></script>
+</body>
+
+</html>

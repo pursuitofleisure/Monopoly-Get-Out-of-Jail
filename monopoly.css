@@ -1,0 +1,237 @@
+/* General Styles */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #e7f5df;
+  font-family: "Libre Franklin", sans-serif;
+  text-transform: uppercase;
+  overflow-x: hidden;
+}
+
+#instructions {
+  width: 400px;
+  max-width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+p {
+  text-transform: none;
+}
+
+button {
+  padding: 16px;
+  background-color: #bfdbae;
+  border: 0;
+  border: 1px solid #000;
+  border-radius: 8px;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 8px auto;
+}
+
+button:hover {
+  background-color: #fff !important;
+  cursor: pointer;
+}
+
+/* Jail Square */
+
+#jail {
+  border: 8px solid #000;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  width: 400px;
+  height: 400px;
+  margin: 16px auto;
+  background-color: #bfdbae;
+  text-transform: uppercase;
+}
+
+#cell-wrapper {
+  grid-area: 1 / 1 / 3 / 3;
+}
+.just {
+  grid-area: 3 / 1 / 4 / 3;
+}
+.visiting {
+  grid-area: 1 / 3 / 3 / 4;
+}
+#play {
+  grid-area: 3 / 3 / 4 / 4;
+}
+
+#jail.free {
+  background-color: green;
+  color: #fff;
+}
+
+#jail.freed #cell-wrapper {
+  background-color: green;
+}
+
+#reset {
+  display: none;
+}
+
+#reset.enabled {
+  display: inline-block;
+}
+
+.just,
+.visiting {
+  font-size: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.visiting {
+  transform: rotate(-90deg);
+}
+
+.sorry .just,
+.sorry .visiting {
+  opacity: 0;
+}
+
+#cell-wrapper {
+  background-color: orange;
+  border: 4px solid #000;
+  border-left: 0;
+  border-top: 0;
+  text-align: center;
+  font-size: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#cell-wrapper.jailed {
+  background-color: red;
+}
+
+#cell-wrapper.freed {
+  background-color: #fff;
+}
+
+.cell {
+  transform: rotate(-45deg);
+}
+
+.bars {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-auto-rows: 120px;
+  grid-gap: 4px;
+  background-color: #000;
+  border: 4px solid #000;
+  width: 140px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.jailed .bars::after {
+  content: "\f406";
+  position: absolute;
+  bottom: -9px;
+  left: 50%;
+  margin-left: -35px;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 70px;
+}
+
+.freed .bars::after {
+  content: "\f70c";
+  position: absolute;
+  bottom: -9px;
+  left: 50%;
+  margin-left: -35px;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 90px;
+  color: green;
+}
+
+.bars > div {
+  background-color: #fff;
+}
+
+#play {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#dice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#roll-die.disabled {
+  display: none;
+}
+
+#dice div {
+  color: #000;
+  border: 1px solid #000;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 24px;
+  margin-right: 8px;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 1px 1px 1px 1px #000000;
+}
+
+#dice div:last-child {
+  margin-right: 0;
+}
+
+.jailed,
+.free {
+  display: none;
+}
+
+.freed .free {
+  display: block;
+}
+
+#tries {
+  text-align: center;
+  max-width: 90%;
+  display: block;
+  margin: 0 auto;
+}
+
+#roll-die {
+  background-color: #f7ffb2;
+}
+
+#reset {
+  background-color: #d0f4ff;
+}
+
+@media screen and (max-width: 400px) {
+  #play,
+  #jail {
+    width: 95%;
+  }
+
+  .cell {
+    transform: rotate(0);
+  }
+}
