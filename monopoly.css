@@ -235,3 +235,9 @@ button:hover {
     transform: rotate(0);
   }
 }
+
+footer {
+  margin-top: 3em;
+  text-align: center;
+  text-transform: none;
+}
